@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:votingapp/Screens/constant.dart';
 class create_vote_screen extends StatefulWidget {
   const create_vote_screen({Key? key}) : super(key: key);
 
@@ -23,32 +24,77 @@ class _create_vote_screenState extends State<create_vote_screen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Enter your information:',
+                'Create a Poll:',
                 style: TextStyle(
                   fontSize: screenWidth * 0.04,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: screenHeight * 0.02),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Field 1',
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.04,
-                    vertical: screenHeight * 0.01,
+              SizedBox(height: screenHeight * 0.03),
+
+              Container(
+                decoration: BoxDecoration(
+               //   borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+
+                      borderSide: BorderSide(style: BorderStyle.solid,width:.4),
+                      //borderRadius: BorderRadius.circular(3),
+
+
+                    ),
+
+
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(style: BorderStyle.solid,color: kTextLightColor),
+                   //  borderRadius: BorderRadius.circular(3),
+                    ),
+                //    labelText: 'Field 1',
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.04,
+                      vertical: screenHeight * 0.01,
+                    ),
+                    border: InputBorder.none,
                   ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.02),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Field 2',
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.04,
-                    vertical: screenHeight * 0.01,
+              Container(
+                decoration: BoxDecoration(
+                //  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+
+                      borderSide: BorderSide(style: BorderStyle.solid,width:.4),
+                  //    borderRadius: BorderRadius.circular(3),
+
+
+                    ),
+
+
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(style: BorderStyle.solid,color: kTextLightColor),
+                 //     borderRadius: BorderRadius.circular(3),
+                    ),
+
+
+                 //   labelText: 'Field 2',
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.04,
+                      vertical: screenHeight * 0.01,
+                    ),
+                    border: InputBorder.none,
                   ),
                 ),
               ),
+
+
               SizedBox(height: screenHeight * 0.04),
               Text(
                 'Options:',
@@ -58,53 +104,44 @@ class _create_vote_screenState extends State<create_vote_screen> {
                 ),
               ),
               SizedBox(height: screenHeight * 0.02),
-              Row(
+              Wrap(
                 children: [
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: isChecked1,
-                        onChanged: (value) {
-                          setState(() {
-                            isChecked1 = value!;
-                          });
-                        },
-                      ),
-                      SizedBox(width: screenWidth * 0.02),
-                      Text(
-                        'Option 1',
-                        style: TextStyle(fontSize: screenWidth * 0.04),
-                      ),
-                    ],
+                  Checkbox(
+                    value: isChecked1,
+                    onChanged: (value) {
+                      setState(() {
+                        isChecked1 = value!;
+                      });
+                    },
                   ),
-                  SizedBox(height: screenHeight * 0.02),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: isChecked2,
-                        onChanged: (value) {
-                          setState(() {
-                            isChecked2 = value!;
-                          });
-                        },
-                      ),
-                      SizedBox(width: screenWidth * 0.02),
-                      Text(
-                        'Option 2',
-                        style: TextStyle(fontSize: screenWidth * 0.04),
-                      ),
-                    ],
+                  SizedBox(width: screenWidth * 0.02),
+                  Text(
+                    'Public',
+                    style: TextStyle(fontSize: screenWidth * 0.04),
+                  ),
+                  SizedBox(width: screenWidth * 0.04),
+                  Checkbox(
+                    value: isChecked2,
+                    onChanged: (value) {
+                      setState(() {
+                        isChecked2 = value!;
+                      });
+                    },
+                  ),
+                  SizedBox(width: screenWidth * 0.02),
+                  Text(
+                    'Private',
+                    style: TextStyle(fontSize: screenWidth * 0.04),
                   ),
                 ],
               ),
-
               SizedBox(height: screenHeight * 0.04),
               ElevatedButton(
                 onPressed: () {
                   // Perform action when button is pressed
                 },
                 child: Text(
-                  'Submit',
+                  'Create Vote',
                   style: TextStyle(fontSize: screenWidth * 0.04),
                 ),
               ),
