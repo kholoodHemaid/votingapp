@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
+import 'package:votingapp/Screens/constant.dart';
 class verified_screen extends StatefulWidget {
+
   const verified_screen({Key? key}) : super(key: key);
 
   @override
@@ -7,6 +10,7 @@ class verified_screen extends StatefulWidget {
 }
 
 class _verified_screenState extends State<verified_screen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +30,7 @@ class _verified_screenState extends State<verified_screen> {
                     style: TextStyle(
                       fontSize: constraints.maxHeight * 0.035,
                       fontWeight: FontWeight.bold,
+                        color: Colors.blue
                     ),
                   ),
                 ),
@@ -43,10 +48,12 @@ class _verified_screenState extends State<verified_screen> {
                             width: constraints.maxWidth * 0.25,
                             height: constraints.maxWidth * 0.25,
                             decoration: BoxDecoration(
-                              shape: BoxShape.circle,
+                              shape: BoxShape.rectangle,
+
                               border: Border.all(
-                                color: Colors.black,
-                                width: constraints.maxWidth * 0.01,
+                                color: kTextLightColor,
+                                style: BorderStyle.solid,
+                                width: constraints.maxWidth * 0.001,
                               ),
                             ),
                             child: Icon(
@@ -58,7 +65,7 @@ class _verified_screenState extends State<verified_screen> {
                           Text(
                             'Upload your image',
                             style: TextStyle(
-                              fontSize: constraints.maxHeight * 0.025,
+                              fontSize: constraints.maxHeight * 0.030,
                             ),
                           ),
                         ],

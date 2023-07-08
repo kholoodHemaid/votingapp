@@ -102,6 +102,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_images_picker:
+    dependency: "direct main"
+    description:
+      name: flutter_images_picker
+      sha256: "05a522687bcdadc39c7dc721e5fad03a2384532275b9bfd891fb4ed6f0ea6dd6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   flutter_lints:
     dependency: "direct dev"
     description:
