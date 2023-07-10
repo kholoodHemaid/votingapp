@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:votingapp/Screens/constant.dart';
-
+import 'package:votingapp/Screens/privateBlockachain.dart';
 
 class create_vote_screen extends StatefulWidget {
   const create_vote_screen({Key? key}) : super(key: key);
@@ -12,9 +12,11 @@ class create_vote_screen extends StatefulWidget {
 class _create_vote_screenState extends State<create_vote_screen> {
   int selectedOption = 0;
   String question = '';
+  String description = '';
   List<String> options = [];
   TextEditingController optionController = TextEditingController();
   TextEditingController questionController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
 
   void addOption() {
     setState(() {
@@ -24,6 +26,15 @@ class _create_vote_screenState extends State<create_vote_screen> {
         optionController.clear();
       }
     });
+  }
+
+  void goToPrivateScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => PrivateScreen(),
+      ),
+    );
   }
 
   @override
@@ -46,6 +57,18 @@ class _create_vote_screenState extends State<create_vote_screen> {
                 onChanged: (value) {
                   setState(() {
                     question = value;
+                  });
+                },
+              ),
+              SizedBox(height: 16.0),
+              TextField(
+                controller: descriptionController,
+                decoration: InputDecoration(
+                  hintText: 'Enter the description',
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    description = value;
                   });
                 },
               ),
@@ -124,6 +147,9 @@ class _create_vote_screenState extends State<create_vote_screen> {
                       setState(() {
                         selectedOption = value!;
                       });
+                      if (selectedOption == 4) {
+                        goToPrivateScreen();
+                      }
                     },
                     title: const Text('Private'),
                   ),
@@ -135,7 +161,7 @@ class _create_vote_screenState extends State<create_vote_screen> {
                   // Perform action when button is pressed
                 },
                 child: Text(
-                  'Create ',
+                  'Create',
                   style: TextStyle(fontSize: 14),
                 ),
               ),
@@ -146,3 +172,4 @@ class _create_vote_screenState extends State<create_vote_screen> {
     );
   }
 }
+
