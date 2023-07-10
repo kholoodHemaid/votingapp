@@ -30,7 +30,7 @@ class _create_vote_screenState extends State<create_vote_screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Vote'),
+        title: Text('Create Poll'),
       ),
       body: SingleChildScrollView(
         child: Padding(

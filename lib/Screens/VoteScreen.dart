@@ -77,12 +77,11 @@ class _VoteScreenState extends State<VoteScreen> {
 
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CircleAvatar(
-                  child: IconButton(
-                    icon: Icon(Icons.add),
-                    onPressed: () {
-                      // تنفيذ الإجراء المطلوب عند النقر على زر الإضافة
-                    },
+                Container(
+                  width: 70,
+                  height: 80,
+                  child: CircleAvatar(
+                    child: Text('Vote',style: TextStyle(fontSize: 16),)
                   ),
                 ),
               ],
