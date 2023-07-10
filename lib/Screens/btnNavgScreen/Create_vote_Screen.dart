@@ -135,7 +135,7 @@ class _create_vote_screenState extends State<create_vote_screen> {
                   // Perform action when button is pressed
                 },
                 child: Text(
-                  'Create Vote',
+                  'Create ',
                   style: TextStyle(fontSize: 14),
                 ),
               ),
