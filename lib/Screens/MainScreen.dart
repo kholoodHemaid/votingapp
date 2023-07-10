@@ -22,7 +22,7 @@ List<BottonNavModel> bottomnav = <BottonNavModel>[
   ),
 
   BottonNavModel(
-    profile_screen(),
+    profile_screen(firstName:'Ahmed' ,lastName: 'Hemaid',email: 'AhmedHemaid@gmail.com'),
   ),
 ];
 

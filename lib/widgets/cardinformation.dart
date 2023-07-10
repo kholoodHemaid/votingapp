@@ -4,8 +4,9 @@ import 'package:votingapp/Screens/VoteScreen.dart';
 import 'package:votingapp/widgets/divider.dart';
 class cardinformation extends StatelessWidget {
   final int index;
+  final String question;
    cardinformation({
-     required this.index
+     required this.index,required this.question
   });
 
   @override
@@ -23,9 +24,9 @@ class cardinformation extends StatelessWidget {
             ),
             SizedBox(width: 15.0),
             Text(
-              'What is your best Player ?',
+             '$question' ,
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize: 14.0,
                 fontWeight: FontWeight.normal,
               ),
             ),

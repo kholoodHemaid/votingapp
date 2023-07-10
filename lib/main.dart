@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
        '/home_Screen': (context) => home_Screen(),
        '/create_vote_screen': (context) => create_vote_screen(),
     //   '/verified_screen': (context) => verified_screen(),
-       '/profile_screen': (context) => profile_screen(),
+       '/profile_screen': (context) => profile_screen(firstName:'Ahmed' ,lastName: 'Hemaid',email: 'AhmedHemaid@gmail.com'),
 
 
 

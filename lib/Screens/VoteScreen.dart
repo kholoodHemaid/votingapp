@@ -1,21 +1,96 @@
 import 'package:flutter/material.dart';
-class VoteScreen extends StatefulWidget {
-  const VoteScreen({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
 
+class VoteScreen extends StatefulWidget {
   @override
   State<VoteScreen> createState() => _VoteScreenState();
 }
 
 class _VoteScreenState extends State<VoteScreen> {
+  int selectedOption = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vote'),
+        title: Text('UVote'),
       ),
-      body: Center(
-        child: Text('Vote Screen'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'What is your best Player ?',
+            style: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 16.0),
+          RadioListTile<int>(
+            value: 1,
+            groupValue: selectedOption,
+            onChanged: (int? value) {
+              setState(() {
+                selectedOption = value!;
+              });
+            },
+            title: const Text('Messi'),
+
+          ),
+          RadioListTile<int>(
+            value: 2,
+            groupValue: selectedOption,
+            onChanged: (int? value) {
+              setState(() {
+                selectedOption = value!;
+              });
+            },
+            title: const Text('Ronaldio'),
+
+          ),
+          RadioListTile<int>(
+            value: 3,
+            groupValue: selectedOption,
+            onChanged: (int? value) {
+              setState(() {
+                selectedOption = value!;
+              });
+            },
+            title: const Text('Haland'),
+
+          ),
+          RadioListTile<int>(
+            value: 3,
+            groupValue: selectedOption,
+            onChanged: (int? value) {
+              setState(() {
+                selectedOption = value!;
+              });
+            },
+            title: const Text('Mpabi'),
+
+          ),
+          SizedBox(height: 16.0),
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Row(
+
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                CircleAvatar(
+                  child: IconButton(
+                    icon: Icon(Icons.add),
+                    onPressed: () {
+                      // تنفيذ الإجراء المطلوب عند النقر على زر الإضافة
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
