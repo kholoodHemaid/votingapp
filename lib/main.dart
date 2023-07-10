@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
        '/main_Screen': (context) => MainScreenPage(),
        '/home_Screen': (context) => home_Screen(),
        '/create_vote_screen': (context) => create_vote_screen(),
-       '/verified_screen': (context) => verified_screen(),
+    //   '/verified_screen': (context) => verified_screen(),
        '/profile_screen': (context) => profile_screen(),
 
 

@@ -20,9 +20,7 @@ List<BottonNavModel> bottomnav = <BottonNavModel>[
   BottonNavModel(
       create_vote_screen()
   ),
-  BottonNavModel(
-    verified_screen(),
-  ),
+
   BottonNavModel(
     profile_screen(),
   ),
@@ -72,12 +70,7 @@ class _MainScreenPageState extends State<MainScreenPage> {
               label: 'Create' ,
               backgroundColor: kTextLightColor
           ),
-          BottomNavigationBarItem(
-              icon:Icon(Icons.check_outlined),
-              activeIcon:Icon(Icons.check) ,
-               label: 'Verified',
-              backgroundColor: kTextLightColor
-          ),
+
           BottomNavigationBarItem(
               icon:Icon(Icons.person_outlined),
               activeIcon:Icon(Icons.person) ,
