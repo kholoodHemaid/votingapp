@@ -35,9 +35,30 @@ class _create_vote_screenState extends State<create_vote_screen> {
   }
 
   void goToPrivateScreen() {
-    setState(() {
-      isEmailVisible = true;
-    });
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Please add email'),
+          content: TextField(
+            keyboardType: TextInputType.emailAddress,
+            controller: emailController,
+            decoration: InputDecoration(
+              hintText: 'Enter emails (comma-separated)',
+            ),
+          ),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                // Perform action when Submit button is pressed
+                Navigator.pop(context); // Close the dialog
+              },
+              child: Text('Submit'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -233,16 +254,20 @@ class _create_vote_screenState extends State<create_vote_screen> {
                 ],
               ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  String emails = emailController.text;
-                  String startTime = startTimeController.text;
-                  String endTime = endTimeController.text;
-                  // Perform action when button is pressed
-                },
-                child: Text(
-                  'Create',
-                  style: TextStyle(fontSize: 14),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    String emails = emailController.text;
+                    String startTime = startTimeController.text;
+                    String endTime = endTimeController.text;
+                    // Perform action when button is pressed
+                  },
+                  child: Text(
+                    'Create',
+                    style: TextStyle(fontSize: 14),
+                  ),
                 ),
               ),
             ],
