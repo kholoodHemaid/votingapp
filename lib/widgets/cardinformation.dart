@@ -26,7 +26,7 @@ class cardinformation extends StatelessWidget {
             Text(
              '$question' ,
               style: TextStyle(
-                fontSize: 14.0,
+                fontSize: 13.0,
                 fontWeight: FontWeight.normal,
               ),
             ),
