@@ -51,6 +51,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               SizedBox(height: screenHeight * 0.01),
               TextField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   contentPadding: EdgeInsets.symmetric(
@@ -60,6 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               SizedBox(height: screenHeight * 0.01),
               TextField(
+                keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
@@ -70,6 +72,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               SizedBox(height: screenHeight * 0.01),
               TextField(
+                keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Confirm Password',

@@ -53,6 +53,7 @@ class _Login_PageState extends State<Login_Page> {
               ),
               SizedBox(height: screenHeight * 0.02),
               TextField(
+                keyboardType: TextInputType.emailAddress,
                 //  controller: _emailTextController,
                 decoration: InputDecoration(
                   hintText: 'Email',
@@ -60,6 +61,7 @@ class _Login_PageState extends State<Login_Page> {
               ),
               SizedBox(height: screenHeight * 0.01),
               TextField(
+                keyboardType: TextInputType.visiblePassword,
                 //  controller:  _passwordTextController,
                 obscureText: true,
                 decoration: InputDecoration(
