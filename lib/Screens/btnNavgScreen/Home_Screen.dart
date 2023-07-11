@@ -30,41 +30,54 @@ class _home_ScreenState extends State<home_Screen> {
         title: Text('UVOTE'),
       ),
       body: Padding(
-        padding:
-            const EdgeInsets.only(bottom: 10, right: 10, left: 10, top: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         child: ListView.builder(
           padding: EdgeInsets.all(16.0),
           itemCount: questions.length,
           itemBuilder: (BuildContext context, int index) {
             return Column(
               children: [
-                cardinformation(
-                  index: index,
-                  question: 'What is your best Player ?',
+                Flexible(
+                  child: cardinformation(
+                    index: index,
+                    question: 'What is your best Player ?',
+                  ),
                 ),
-                cardinformation(
-                  index: index,
-                  question: 'What is your program languge do you prefer ?',
+                Flexible(
+                  child: cardinformation(
+                    index: index,
+                    question: 'What is your program languge do you prefer ?',
+                  ),
                 ),
-                cardinformation(
-                  index: index,
-                  question: 'What is your favorite color ?',
+                Flexible(
+                  child: cardinformation(
+                    index: index,
+                    question: 'What is your favorite color ?',
+                  ),
                 ),
-                cardinformation(
-                  index: index,
-                  question: 'Who is your favorite actor?',
+                Flexible(
+                  child: cardinformation(
+                    index: index,
+                    question: 'Who is your favorite actor?',
+                  ),
                 ),
-                cardinformation(
-                  index: index,
-                  question: 'What is your favorite book?',
+                Flexible(
+                  child: cardinformation(
+                    index: index,
+                    question: 'What is your favorite book?',
+                  ),
                 ),
-                cardinformation(
-                  index: index,
-                  question: 'What is your favorite food?',
+                Flexible(
+                  child: cardinformation(
+                    index: index,
+                    question: 'What is your favorite food?',
+                  ),
                 ),
-                cardinformation(
-                  index: index,
-                  question: 'Which is your favorite movie genre?',
+                Flexible(
+                  child: cardinformation(
+                    index: index,
+                    question: 'Which is your favorite movie genre?',
+                  ),
                 ),
               ],
             );
