@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:votingapp/Screens/constant.dart';
 import 'package:votingapp/Screens/privateBlockachain.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+TextEditingController emailController = TextEditingController();
+TextEditingController startTimeController = TextEditingController();
+TextEditingController endTimeController = TextEditingController();
 
 class create_vote_screen extends StatefulWidget {
   const create_vote_screen({Key? key}) : super(key: key);
@@ -14,6 +18,8 @@ class _create_vote_screenState extends State<create_vote_screen> {
   String question = '';
   String description = '';
   List<String> options = [];
+  TextEditingController emailController = TextEditingController();
+  bool isEmailVisible = false;
   TextEditingController optionController = TextEditingController();
   TextEditingController questionController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
@@ -29,12 +35,9 @@ class _create_vote_screenState extends State<create_vote_screen> {
   }
 
   void goToPrivateScreen() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => PrivateScreen(),
-      ),
-    );
+    setState(() {
+      isEmailVisible = true;
+    });
   }
 
   @override
@@ -121,7 +124,7 @@ class _create_vote_screenState extends State<create_vote_screen> {
               ),
               SizedBox(height: 15),
               Text(
-                'Options:',
+                'Poll Status:',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -153,11 +156,88 @@ class _create_vote_screenState extends State<create_vote_screen> {
                     },
                     title: const Text('Private'),
                   ),
+                  if (isEmailVisible)
+                    TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        hintText: 'Enter emails (comma-separated)',
+                      ),
+                    ),
                 ],
               ),
               SizedBox(height: 5),
+              Padding(padding: EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      DatePicker.showDateTimePicker(
+                        context,
+                        showTitleActions: true,
+                        onConfirm: (dateTime) {
+                          startTimeController.text = dateTime.toString();
+                        },
+                        currentTime: DateTime.now(),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Start Time',
+                            ),
+                            Icon(Icons.date_range),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16.0),
+                  InkWell(
+                    onTap: () {
+                      DatePicker.showDateTimePicker(
+                        context,
+                        showTitleActions: true,
+                        onConfirm: (dateTime) {
+                          endTimeController.text = dateTime.toString();
+                        },
+                        currentTime: DateTime.now(),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'End Time',
+                            ),
+                            Icon(Icons.date_range),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              ),
               ElevatedButton(
                 onPressed: () {
+                  String emails = emailController.text;
+                  String startTime = startTimeController.text;
+                  String endTime = endTimeController.text;
                   // Perform action when button is pressed
                 },
                 child: Text(
