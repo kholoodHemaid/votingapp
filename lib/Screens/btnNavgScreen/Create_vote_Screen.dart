@@ -35,31 +35,11 @@ class _create_vote_screenState extends State<create_vote_screen> {
   }
 
   void goToPrivateScreen() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Please add email'),
-          content: TextField(
-            keyboardType: TextInputType.emailAddress,
-            controller: emailController,
-            decoration: InputDecoration(
-              hintText: 'Enter emails (comma-separated)',
-            ),
-          ),
-          actions: [
-            ElevatedButton(
-              onPressed: () {
-                // Perform action when Submit button is pressed
-                Navigator.pop(context); // Close the dialog
-              },
-              child: Text('Submit'),
-            ),
-          ],
-        );
-      },
-    );
+    setState(() {
+      isEmailVisible = true;
+    });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -179,6 +159,7 @@ class _create_vote_screenState extends State<create_vote_screen> {
                   ),
                   if (isEmailVisible)
                     TextField(
+                      keyboardType: TextInputType.emailAddress,
                       controller: emailController,
                       decoration: InputDecoration(
                         hintText: 'Enter emails (comma-separated)',
