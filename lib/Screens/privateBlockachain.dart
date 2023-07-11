@@ -5,6 +5,7 @@ class PrivateScreen extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController startTimeController = TextEditingController();
   TextEditingController endTimeController = TextEditingController();
+  TextEditingController dateTimeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +24,16 @@ class PrivateScreen extends StatelessWidget {
                 hintText: 'Enter emails (comma-separated)',
               ),
             ),
+
+
             SizedBox(height: 16.0),
             InkWell(
               onTap: () {
-                DatePicker.showTimePicker(
+                DatePicker.showDateTimePicker(
                   context,
                   showTitleActions: true,
-                  onConfirm: (time) {
-                    startTimeController.text = time.toString();
+                  onConfirm: (dateTime) {
+                    startTimeController.text = dateTime.toString();
                   },
                   currentTime: DateTime.now(),
                 );
@@ -48,7 +51,7 @@ class PrivateScreen extends StatelessWidget {
                       Text(
                         'Start Time',
                       ),
-                      Icon(Icons.access_time),
+                      Icon(Icons.date_range),
                     ],
                   ),
                 ),
@@ -57,11 +60,11 @@ class PrivateScreen extends StatelessWidget {
             SizedBox(height: 16.0),
             InkWell(
               onTap: () {
-                DatePicker.showTimePicker(
+                DatePicker.showDateTimePicker(
                   context,
                   showTitleActions: true,
-                  onConfirm: (time) {
-                    endTimeController.text = time.toString();
+                  onConfirm: (dateTime) {
+                    endTimeController.text = dateTime.toString();
                   },
                   currentTime: DateTime.now(),
                 );
@@ -79,7 +82,7 @@ class PrivateScreen extends StatelessWidget {
                       Text(
                         'End Time',
                       ),
-                      Icon(Icons.access_time),
+                      Icon(Icons.date_range),
                     ],
                   ),
                 ),
@@ -92,6 +95,7 @@ class PrivateScreen extends StatelessWidget {
                 String emails = emailController.text;
                 String startTime = startTimeController.text;
                 String endTime = endTimeController.text;
+                String dateTime = dateTimeController.text;
 
                 // Do something with the entered values
               },
@@ -103,4 +107,5 @@ class PrivateScreen extends StatelessWidget {
     );
   }
 }
+
 
